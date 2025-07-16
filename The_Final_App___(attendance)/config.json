@@ -1,0 +1,14 @@
+{
+    "admin_password": "6965",
+    "auto_start_time": "01:44",
+    "auto_start_enabled": false,
+    "fingerprint_port": "COM6",
+    "entry_cutoff_time": "10:00",
+    "exit_cutoff_time": "17:00",
+    "data_directory": "data",
+    "auto_start_entry": "08:00",
+    "auto_off_entry": "10:00",
+    "auto_start_exit": "17:00",
+    "auto_off_exit": "19:00",
+    "employee_data_directory": "employees_data"
+}

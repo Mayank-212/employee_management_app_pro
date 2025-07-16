@@ -1,0 +1,22 @@
+{
+    "logs": [
+        {
+            "emp_id": "1",
+            "name": "mayank",
+            "action": "registered",
+            "timestamp": "2025-07-15 20:14:30"
+        },
+        {
+            "emp_id": "1",
+            "name": "mayank",
+            "action": "removed",
+            "timestamp": "2025-07-15 20:21:39"
+        },
+        {
+            "emp_id": "1",
+            "name": "mayank",
+            "action": "registered",
+            "timestamp": "2025-07-15 20:22:14"
+        }
+    ]
+}
