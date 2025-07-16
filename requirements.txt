@@ -1,1 +1,9 @@
-
+tkcalendar
+openpyxl
+reportlab
+pyserial
+Pillow
+opencv-python
+numpy
+scikit-learn
+joblib
