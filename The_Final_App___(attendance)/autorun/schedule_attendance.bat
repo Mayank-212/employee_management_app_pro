@@ -1,22 +1,21 @@
 @echo off
 setlocal enabledelayedexpansion
 
-:: Set working directory to the script's parent folder
-set SCRIPT_DIR=%~dp0
-set SCRIPT_DIR=%SCRIPT_DIR:~0,-1%
-cd /d "%SCRIPT_DIR%\.."
+:: Set working directory to the script's location
+set "SCRIPT_DIR=%~dp0"
+cd /d "%SCRIPT_DIR%"
 
-:: Try to find pythonw.exe in common paths
-set PYTHONW_PATH=
+:: Try to find pythonw.exe in common installation paths
+set "PYTHONW_PATH="
 for %%P in (
     "C:\Python313\pythonw.exe"
-    "C:\Users\%USERNAME%\AppData\Local\Programs\Python\Python313\pythonw.exe"
-    "C:\Users\%USERNAME%\AppData\Local\Programs\Python\Python312\pythonw.exe"
-    "C:\Users\%USERNAME%\AppData\Local\Programs\Python\Python311\pythonw.exe"
-    "C:\Users\%USERNAME%\AppData\Local\Programs\Python\Python310\pythonw.exe"
+    "%LocalAppData%\Programs\Python\Python313\pythonw.exe"
+    "%LocalAppData%\Programs\Python\Python312\pythonw.exe"
+    "%LocalAppData%\Programs\Python\Python311\pythonw.exe"
+    "%LocalAppData%\Programs\Python\Python310\pythonw.exe"
 ) do (
-    if exist %%~P (
-        set PYTHONW_PATH=%%~P
+    if exist "%%~P" (
+        set "PYTHONW_PATH=%%~P"
         goto :FOUND
     )
 )
@@ -28,5 +27,7 @@ if not defined PYTHONW_PATH (
     exit /b
 )
 
-:: Run mark_attendance.pyw silently
-start "" "!PYTHONW_PATH!" "%SCRIPT_DIR%\..\mark_attendance.pyw"
+:: ✅ Run mark_attendance.pyw silently in background
+start "" "%PYTHONW_PATH%" "%SCRIPT_DIR%mark_attendance.pyw"
+
+exit /b
