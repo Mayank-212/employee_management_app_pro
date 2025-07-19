@@ -223,11 +223,11 @@ def show_info(title, message):
     messagebox.showinfo(title, message)
 
 def verify_admin_password(config):
-    # from tkinter import messagebox
-    # input_pwd = askstring("🔒 Admin Verification", "Enter admin password:", show="*")
-    # if input_pwd != config.get("admin_password", "6965"):
-    #     messagebox.showerror("Access Denied", "Incorrect password!")
-    #     return False
+    from tkinter import messagebox
+    input_pwd = askstring("🔒 Admin Verification", "Enter admin password:", show="*")
+    if input_pwd != config.get("admin_password", "6965"):
+        messagebox.showerror("Access Denied", "Incorrect password!")
+        return False
     return True
 
 
